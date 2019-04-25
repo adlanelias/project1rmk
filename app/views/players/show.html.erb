@@ -22,7 +22,9 @@
   </ul>
 </div>
 
+<% if @current_user.admin? %>
 <div class="controls">
   <%= link_to 'Edit Player', edit_player_path(@player) %>
   <%= link_to 'Delete Player', player_path(@player), :method => 'delete' %>
 </div>
+<% end %>

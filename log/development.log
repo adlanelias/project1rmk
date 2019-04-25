@@ -137,3 +137,66 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 1154ms (Views: 20.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2019-04-26 09:50:02 +1000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adlanelias/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+Started GET "/players?sort_by=name" for ::1 at 2019-04-26 09:50:03 +1000
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 2089ms (Views: 340.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by PlayersController#index as HTML
+Started GET "/clubs?sort_by=team_name" for ::1 at 2019-04-26 09:50:04 +1000
+  Parameters: {"sort_by"=>"name"}
+Processing by ClubsController#index as HTML
+  Parameters: {"sort_by"=>"team_name"}
+  Rendering players/index.html.erb within layouts/application
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."name" ASC[0m
+  ↳ app/views/players/index.html.erb:3
+  [1m[36mClub Load (1.1ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs" ORDER BY "clubs"."team_name" ASC[0m
+  ↳ app/views/clubs/index.html.erb:5
+  Rendered players/index.html.erb within layouts/application (15.8ms)
+  Rendered clubs/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 102ms (Views: 45.6ms | ActiveRecord: 18.0ms)
+
+
+Completed 200 OK in 121ms (Views: 58.3ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/login" for ::1 at 2019-04-26 09:50:05 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-04-26 09:50:06 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PwfWLmZSk1HlDvyUGf+oNVBSRSVHydc7PkT2MnmPVzM+o4lr1vN5cjjJ0Jv+7FMdZf1kBSXAtwg7uFXcJy17Pg==", "email"=>"adlanelias7@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adlanelias7@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-26 09:50:06 +1000
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1245ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/standings" for ::1 at 2019-04-26 09:50:12 +1000
+Processing by StandingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering standings/index.html.erb within layouts/application
+  Rendered standings/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1824ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
