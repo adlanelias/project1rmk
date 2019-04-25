@@ -1,0 +1,23 @@
+<h1><%= @club.team_name %></h1>
+
+<%= image_tag @club.image, :alt => "@club team_name", :class => 'feature' %>
+    <ul>
+      <li>Club: <%= @club.team_name %></li>
+      <li>Manager: <%= @club.manager %></li>
+      <li>League Position: <%= @club.team_rank %></li>
+      <% if @club.schedule.present? %>
+      <li>Stadium: <%= @club.schedule %></li>
+      <% end %>
+      <% if @club.players.present? %>
+      <li>Players: <%= link_to @club.player.name, @club.player %></li>
+      <% end %>
+    </ul>
+
+    <%= link_to 'Squad' %>
+
+    <% if @current_user.admin? %>
+    <div class="controls">
+      <%= link_to 'Edit Club', edit_club_path(@club) %>
+      <%= link_to 'Delete Club', club_path(@club), :method => 'delete' %>
+    </div>
+    <% end %>

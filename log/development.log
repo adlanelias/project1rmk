@@ -1,0 +1,139 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7613172311533217835)[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7613172311533217835)[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adlanelias/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+Started GET "/" for ::1 at 2019-04-25 18:36:58 +1000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adlanelias/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 5118ms (Views: 2058.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-04-25 18:37:06 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-04-25 18:37:07 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T7kfWyUXT1HcghWI5kTTpo6bHeDQWBKOeXr4fmqiZO+4UhBuId0gWGU1zcH8ezdTlje6PvGTv/QNRFYB/sENRQ==", "email"=>"adlanelias7@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adlanelias7@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-25 18:37:07 +1000
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1739ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clubs?sort_by=team_name" for ::1 at 2019-04-25 18:37:11 +1000
+Processing by ClubsController#index as HTML
+  Parameters: {"sort_by"=>"team_name"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering clubs/index.html.erb within layouts/application
+  [1m[36mClub Load (1.2ms)[0m  [1m[34mSELECT "clubs".* FROM "clubs" ORDER BY "clubs"."team_name" ASC[0m
+  ↳ app/views/clubs/index.html.erb:5
+  Rendered clubs/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 52ms (Views: 33.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/players?sort_by=name" for ::1 at 2019-04-25 18:37:13 +1000
+Processing by PlayersController#index as HTML
+  Parameters: {"sort_by"=>"name"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."name" ASC[0m
+  ↳ app/views/players/index.html.erb:3
+  Rendered players/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 48ms (Views: 33.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/players/new" for ::1 at 2019-04-25 18:37:14 +1000
+Processing by PlayersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering players/new.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "clubs"."team_name", "clubs"."id" FROM "clubs"[0m
+  ↳ app/views/players/_form.html.erb:31
+  Rendered players/_form.html.erb (63.2ms)
+  Rendered players/new.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 100ms (Views: 93.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/standings" for ::1 at 2019-04-25 18:37:16 +1000
+Processing by StandingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Started GET "/" for ::1 at 2019-04-25 18:37:18 +1000
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering standings/index.html.erb within layouts/application
+  Rendered standings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 1952ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1348ms (Views: 20.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/standings" for ::1 at 2019-04-25 18:37:21 +1000
+Processing by StandingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering standings/index.html.erb within layouts/application
+  Rendered standings/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1746ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-04-25 18:37:27 +1000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 18.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-25 18:37:29 +1000
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1154ms (Views: 20.0ms | ActiveRecord: 0.8ms)
+
+

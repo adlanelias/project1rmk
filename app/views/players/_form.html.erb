@@ -1,0 +1,34 @@
+<%= form_for @player do |f| %>
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :country %>
+  <%= f.country_select :country, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :dob, "Date of Birth" %>
+  <%= f.text_field :dob, :placeholder => "DD-MM-YYYY", :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :position %>
+  <%= f.text_field :position, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :number %>
+  <%= f.text_field :number, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :nation_image %>
+  <%= f.url_field :nation_image, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :image %>
+  <%= f.url_field :image, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.select :club_id, Club.pluck(:team_name, :id), :include_blank => true, :class => 'form-control' %>
+  </div>
+  <%= f.submit %>
+<% end %>

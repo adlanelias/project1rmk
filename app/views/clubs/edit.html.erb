@@ -1,0 +1,5 @@
+<% if @current_user.admin? %>
+<h1>Edit Club</h1>
+
+<%= render :partial => 'form' %>
+<% end %>

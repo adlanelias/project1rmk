@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project1rmk</title>
+    <title>Premier League App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+     <div class="d-flex" id="wrapper">
+
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Premier League Stuff </div>
+        <div class="list-group list-group-flush">
+          <a><%= link_to 'Home', root_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <% if @current_user.present? %>
+          <% if @current_user.admin? %>
+          <a><%= link_to "All users", users_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to "New Club", new_club_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to "New Player", new_player_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <% end %>
+          <a><%= link_to "Players", players_path(sort_by: "name"), :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to "Clubs", clubs_path(sort_by: "team_name"), :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to "Standings", standings_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to "Sign out #{  @current_user.email }", login_path, :method => 'delete', :class => "list-group-item list-group-item-action bg-light" %></a>
+          <% else %>
+          <a><%= link_to 'Sign Up', new_user_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <a><%= link_to 'Sign In', login_path, :class => "list-group-item list-group-item-action bg-light" %></a>
+          <% end %>
+      </div>
+      </div>
+
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>

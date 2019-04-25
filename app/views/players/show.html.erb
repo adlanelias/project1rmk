@@ -1,0 +1,28 @@
+<div class="row">
+<% @player.clubs.each do |club| %>
+  <%= image_tag club.image, :class => 'playerclub' %>
+<% end %>
+</div>
+
+<div class="col-md-12">
+<%= image_tag @player.image, :class => 'playerpic' %>
+
+  <ul>
+    <li>Name: <%= @player.name %></li>
+    <li>Nationality: <%= @player.country %>
+    <% if @player.nation_image.present? %>
+    <%= image_tag @player.nation_image, :class => 'flagicon' %>
+    <% end %>
+    </li>
+    <% if @player.dob.present? %>
+    <li>Date of Birth: <%= @player.dob %></li>
+    <% end %>
+    <li>Position: <%= @player.position %> </li>
+    <li>Number: <%= @player.number %> </li>
+  </ul>
+</div>
+
+<div class="controls">
+  <%= link_to 'Edit Player', edit_player_path(@player) %>
+  <%= link_to 'Delete Player', player_path(@player), :method => 'delete' %>
+</div>
