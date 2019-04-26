@@ -36,6 +36,8 @@ Click the link to use the site:
 
 * It's nowhere near complete, but in the future if I were to continue, I would add Squads and Players using API's, currently it's limited to only an admin being able to edit and create new players and clubs
 
+* Would also add fixtures and scores to the clubs and the homepage
+
 * Due to API hindrances, some of the seeds had to be manually entered in order to show a somewhat working website
 
 * Implement a search bar for the players
@@ -48,4 +50,4 @@ Click the link to use the site:
 
 * Bootstrap
 
-* Deployment of website to heroku
+* Deployment of website to Heroku
