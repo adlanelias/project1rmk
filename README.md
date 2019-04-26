@@ -30,6 +30,18 @@ Click the link to use the site:
 
 * heisenbug-premier-league-live-scorers
 
+## Gems
+
+* Bootstrap
+
+* Bcrypt
+
+* Country Select
+
+* Unirest
+
+* Sportmonks
+
 # Further implementations and difficulties faced
 
 * A lot of the API's aren't free, so while making the app, ran into many issues with the API's
