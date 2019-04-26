@@ -12,5 +12,6 @@
 
 class Squad < ApplicationRecord
   has_many :players
-  has_and_belongs_to_many :users, :clubs
+  has_and_belongs_to_many :users 
+  has_and_belongs_to_many :clubs
 end
