@@ -44,6 +44,10 @@ Click the link to use the site:
 
 * Get the flag icon gem to link with the country select gem so that the icon turns up automatically when selecting the country
 
+* Adding favourites to a user so they can follow a team and the user homepage would display their favourite team, fixtures, stats, etc
+
+* Scraping data in order to populate the database and make it look more complete
+
 # What I learnt
 
 * This project my main focus was to understand how to use API's
@@ -51,3 +55,5 @@ Click the link to use the site:
 * Bootstrap
 
 * Deployment of website to Heroku
+
+* Data Scraping, however not implemented due to time constraint
