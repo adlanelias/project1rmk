@@ -3,15 +3,7 @@
 <% @players.each do |player| %>
   <ul>
     <li>Name: <%= link_to player.name, player_path(player.id) %></li>
-    <!-- <li>Country: <%= player.country %>
-      <% if player.nation_image.present? %>
-      <% @players.each do |player| %>
-        <%= image_tag player.nation_image, :class => 'flagicon' %>
-      <% end %>
-    </li>
-    <% if player.dob.present? %>
-    <li>Date of Birth: <%= player.dob %></li>
-    <% end %>
+    <li>Country: <%= player.country %>
     <li>Position: <%= player.position %> </li>
     <li>Number: <%= player.number %> </li> -->
   </ul>
